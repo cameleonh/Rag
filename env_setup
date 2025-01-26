@@ -1,0 +1,15 @@
+# 1. 가상 환경 생성 (Python 3.11 + Windows 기준)
+conda create -n rag python=3.11
+conda activate rag
+
+# 2. PyTorch + CUDA 11.8 설치
+conda install -c pytorch pytorch=2.1.2 torchvision=0.16.2 torchaudio=2.1.2 cudatoolkit=11.8
+
+# 3. FAISS-CPU 설치 (Linux/WSL2 권장) :cite[6]
+conda install -c conda-forge faiss-cpu  # conda-forge 채널 사용
+
+# 4. LangChain 관련
+conda install -c conda-forge pandas numpy streamlit langchain-community huggingface-hub sentence-transformers pdfplumber textblob ollama fitz
+
+# 5. 추가 의존성
+pip install python-dateutil==2.9.0 PyMuPDF
